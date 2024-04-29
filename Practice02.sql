@@ -48,6 +48,11 @@ GROUP by job_id
 ORDER BY MAX(salary)- MIN(salary) DESC;
 
 -- 문제 9
+SELECT manager_id, ROUND(AVG(salary), 1),
+MAX(salary), MIN(salary), hire_date
+FROM employees group by manager_id, hire_date
+WHERE (AVG(salary) >= '5000') AND
+(hire_date >= '15/01/01');
 
 -- 문제 10
 SELECT first_name, hire_date,
