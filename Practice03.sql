@@ -114,6 +114,17 @@ WHERE loc.location_id = dept.location_id AND
 loc.country_id = cont.country_id
 ORDER BY cont.country_name ASC;
 
+SELECT cont.country_name,
+cont.country_id,
+loc.city, 
+loc.location_id,
+dept.department_name,
+dept.department_id
+FROM locations loc JOIN countries cont
+ON loc.country_id = cont.country_id
+JOIN departments dept
+ON loc.location_id = dept.location_id;
+
 -- 문제 7
 SELECT emp.employee_id, 
 emp.first_name || ' ' || last_name 이름,
@@ -122,6 +133,15 @@ jh.start_date,
 jh.end_date
 FROM employees emp, job_history jh
 WHERE emp.employee_id = jh.employee_id AND
+jh.job_id = 'AC_ACCOUNT';
+
+SELECT emp.employee_id, 
+emp.first_name || ' ' || last_name 이름,
+jh.job_id,
+jh.start_date,
+jh.end_date
+FROM employees emp JOIN job_history jh
+ON emp.employee_id = jh.employee_id AND
 jh.job_id = 'AC_ACCOUNT';
 
 -- 문제 8
