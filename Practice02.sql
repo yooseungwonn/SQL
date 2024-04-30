@@ -7,10 +7,9 @@ SELECT MAX(salary)-MIN(salary) 차액
 FROM employees;
 
 -- 문제 3
-SELECT first_name, 
-TO_CHAR(hire_date, 'YYYY"년"MM"월"DD"일"') 신입사원등록
-FROM employees
-WHERE hire_date = (SELECT MAX(hire_date) FROM (employees));
+SELECT TO_CHAR(MAX(hire_date), 'YYYY"년"MM"월"DD"일"') 신입사원등록
+FROM employees;
+
 
 -- 문제 4
 SELECT department_id, AVG(salary),
@@ -28,10 +27,9 @@ ORDER BY MIN(salary) DESC,
 AVG(salary) ASC;
 
 -- 문제 6
-SELECT first_name, 
-TO_CHAR(hire_date, 'YYYY-MM-DD DAY') 최연장자
-FROM employees
-WHERE hire_date = (SELECT MIN(hire_date) FROM (employees));
+SELECT TO_CHAR(MIN(hire_date), 'YYYY-MM-DD DAY') 최연장자
+FROM employees;
+
 
 -- 문제 7
 SELECT department_id,  ROUND(AVG(salary), 2),
