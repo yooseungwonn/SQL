@@ -92,7 +92,7 @@ SELECT employee_id, first_name, salary, hire_date FROM
 ORDER BY hire_date))
 WHERE RN >= 11 AND RN <= 15;
 
-SELECT rownum, employee_id, first_name, salary, hire_date
+SELECT rnum, employee_id, first_name, salary, hire_date
 FROM
     (SELECT employee_id, first_name, salary, hire_date,
             ROW_NUMBER() OVER (ORDER BY hire_date) AS rnum
