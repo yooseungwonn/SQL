@@ -197,7 +197,7 @@ VALUES('류츠신', 3, '삼체 작가');
 SELECT * FROM author;
 --desc author;
 --ALTER TABLE author RENAME COLUMN ANTHOR_NAME TO author_name;
---DESC author;
+DESC author;
 
 ROLLBACK; -- 반영 취소
 
