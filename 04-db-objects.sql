@@ -161,9 +161,21 @@ START WITH 3
    MAXVALUE 1000000
    NOCACHE;
 
+SELECT emp.first_name || ' ' || emp.last_name 사람_이름,
+mgr.first_name || ' ' || emp.last_name 매니저_이름
+FROM employees emp JOIN employees mgr
+ON emp.manager_id = mgr.employee_id
+ORDER BY emp.first_name DESC;
 
- 
+SELECT first_name || ' ' || last_name 사람_이름,
+email, phone_number, hire_date
+FROM employees
+WHERE lower(first_name) LIKE '%' OR lower(last_name) LIKE '%';
 
--
+SELECT first_name || ' ' || last_name 사람_이름, salary
+FROM employees
+WHERE salary BETWEEN 2000 AND 10000
+ORDER BY salary ASC;
+
     
 
