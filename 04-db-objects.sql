@@ -177,5 +177,6 @@ FROM employees
 WHERE salary BETWEEN 2000 AND 10000
 ORDER BY salary ASC;
 
+
     
 
