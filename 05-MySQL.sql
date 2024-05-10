@@ -189,6 +189,8 @@ SELECT title 제목, pub_date 출판일,
  FROM book b JOIN author a ON a.author_id = b.author_id;
  
 
+ 
+
     
 
 
