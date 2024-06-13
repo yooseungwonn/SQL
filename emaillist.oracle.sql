@@ -26,4 +26,7 @@ commit;
 
 SELECT * FROM emaillist ORDER BY created_at DESC;
 
+INSERT INTO emaillist (no, last_name, first_name, email) 
+values (seq_emaillist_pk.nextval, ?, ?, ?);
+
 
